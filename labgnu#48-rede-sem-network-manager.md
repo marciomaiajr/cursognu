@@ -35,15 +35,21 @@ wpa-psk string-de-conexão
 ## Sem network manager e utilizando a linha de comando
 
 `$ wpa_passphrase "ssid" "password" > /etc/wpa.conf` Gera arquivo de configuração
+
 `$ wpa_supplicant -c /etc/wpa.conf -i wlan0` Conecta à rede wi-fi
+
 `$ wpa_supplicant -Dnl80211 -iwlan0 -c/etc/wpa_supplicant.conf` Outra forma de conectar
 
 ## Outros comandos
 
 `$ iwconfig` verifica configurações do adaptador wi-fi.
+
 `CTRL-z` manda job para o background (para o job)
+
 `$ jobs` lista os jobs com número
+
 `$ bg 1` manda job #1 para o background (para continuar a execução)
+
 `$ fg 1` manda job #1 de volta para o foreground (continua a execução)
 
 `jounalctl -f` verifica a conexão em tempo real
@@ -53,7 +59,9 @@ wpa-psk string-de-conexão
 ## Tirar a interface da responsabilidade do NetworkManager
 
 `/etc/NetworkManager/` diretório do network manager
+
 `nmcli dev status` verifica as interfaces gerenciadas pelo network manager
+
 `nmcli dev set wlan0 managed no` tira a interface do domínio do network manager
 
 ## Configurando manualmente o endereço IP após conexão wi-fi
@@ -63,5 +71,6 @@ wpa-psk string-de-conexão
 ## Configurando endereço IP via DHCP
 
 `nmap --script broadcast-dhcp-discover -e wlan0` consulta dhcp mas sem atribui endereço
+
 `dhclient wlan0` consulta e conecta utilizando dhcp para configurar o endereço IP
 
